@@ -1,3 +1,7 @@
-main: brussel.sprout
+main: brussel.sprout.BrusselSprout
 name: brusselsprout
-version: 0.1
+version: 1.0
+commands:
+  backpack:
+    description: Opens a portable inventory
+    usage: /backpack n

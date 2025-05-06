@@ -1,1 +1,4 @@
-brussel\sprout\App.class
+brussel\sprout\BackpackInventory.class
+brussel\sprout\BrusselSprout.class
+brussel\sprout\commands\CommandBackpack.class
+brussel\sprout\BackpackMap.class
