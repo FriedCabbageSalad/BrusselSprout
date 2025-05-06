@@ -21,7 +21,7 @@ public class BackpackMap {
     }
 
     public BackpackInventory getBackpackInventory(Player player, int inventoryNumber) {
-        return map.get(player).get(inventoryNumber);
+        return map.get(player).get(inventoryNumber - 1);
     }
 
     public void addBackpack(Player player, int number) {
