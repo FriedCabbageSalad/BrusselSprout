@@ -37,22 +37,37 @@ public class CommandBackpack implements CommandExecutor {
         // Checks correct argument length
         if (args.length == 2) {
             String subCommand = args[0].toLowerCase();
-            String numbeString = args[1];
+            String numberString = args[1];
             int number;
+            int index;
 
             try {
-                number = Integer.parseInt(numbeString);    
+                number = Integer.parseInt(numberString);
+                index = number - 1;   
             } catch (NumberFormatException e) {
                 player.sendMessage("Argument should be a number.");
                 player.sendMessage("Usage: /backpack <number>");
                 return true;
             }
 
-            if (subCommand.equals("open")) {
-                BackpackInventory currInv = map.getBackpackInventory(pID, number);
-                player.openInventory(currInv.getBackpack());
-            } else if (subCommand.equals("add")) {
-                this.map.addBackpack(pID, number);
+            switch (subCommand) {
+                case "open":
+                    BackpackInventory currInv = map.getBackpackInventory(pID, index);
+                    player.openInventory(currInv.getBackpack());
+                    player.sendMessage(String.format("Opened backpack %s.", number));
+                    break;
+                case "add":
+                    this.map.addBackpack(pID, index);
+                    player.sendMessage(String.format("Added %s backpacks.", number));
+                    break;
+                case "delete":
+                    this.map.deleteBackpack(pID, index);
+                    player.sendMessage(String.format("Deleted backpack %s.", number));
+                    break;
+                case "expand":
+                    this.map.expandBackpack(pID, index, 1);
+                    player.sendMessage(String.format("Expanded backpack %s.", number));
+                    break;
             }
 
         } else {

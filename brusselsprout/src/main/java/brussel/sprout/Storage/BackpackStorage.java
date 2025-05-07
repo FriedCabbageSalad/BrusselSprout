@@ -59,7 +59,7 @@ public class BackpackStorage {
 
             map.put(uuid, list);
         }
-        System.out.println("Loading Backpack Information from backpack_storage.yml succeeded");
+        System.out.println("Loading Backpack Information from backpack_storage.yml succeeded!");
         return map;
     }
 }
