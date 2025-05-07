@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="brussel.sprout.BrusselSproutTest" time="0.018" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="brussel.sprout.BrusselSproutTest" time="0.017" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="SG"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Microsoft\jdk-21.0.7.6-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\Kieran\AppData\Local\Temp\surefire3639168136040926905\surefirebooter56278917751305894.jar C:\Users\Kieran\AppData\Local\Temp\surefire3639168136040926905 2025-05-07T03-43-32_467-jvmRun1 surefire13976542008891716001tmp surefire_014302676718207190138tmp"/>
+    <property name="sun.java.command" value="C:\Users\Kieran\AppData\Local\Temp\surefire6250702667458650664\surefirebooter2652604788188984282.jar C:\Users\Kieran\AppData\Local\Temp\surefire6250702667458650664 2025-05-07T22-11-01_978-jvmRun1 surefire9284452753550133990tmp surefire_03984506343781215323tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="c:\Users\Kieran\Desktop\GitHub Repo Real\BrusselSprout\BrusselSprout\brusselsprout\target\test-classes;c:\Users\Kieran\Desktop\GitHub Repo Real\BrusselSprout\BrusselSprout\brusselsprout\target\classes;C:\Users\Kieran\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Kieran\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Kieran\.m2\repository\org\spigotmc\spigot-api\1.17-R0.1-SNAPSHOT\spigot-api-1.17-R0.1-SNAPSHOT.jar;C:\Users\Kieran\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\Kieran\.m2\repository\com\google\guava\guava\21.0\guava-21.0.jar;C:\Users\Kieran\.m2\repository\com\google\code\gson\gson\2.8.0\gson-2.8.0.jar;C:\Users\Kieran\.m2\repository\net\md-5\bungeecord-chat\1.16-R0.4\bungeecord-chat-1.16-R0.4.jar;C:\Users\Kieran\.m2\repository\org\yaml\snakeyaml\1.28\snakeyaml-1.28.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Kieran\AppData\Local\Temp\surefire3639168136040926905\surefirebooter56278917751305894.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Kieran\AppData\Local\Temp\surefire6250702667458650664\surefirebooter2652604788188984282.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.7+6-LTS"/>

@@ -1,5 +1,7 @@
 package brussel.sprout.commands;
 
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -30,7 +32,8 @@ public class CommandBackpack implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-
+        UUID pID= player.getUniqueId();
+        
         // Checks correct argument length
         if (args.length == 2) {
             String subCommand = args[0].toLowerCase();
@@ -46,10 +49,10 @@ public class CommandBackpack implements CommandExecutor {
             }
 
             if (subCommand.equals("open")) {
-                BackpackInventory currInv = map.getBackpackInventory(player, number);
-                currInv.openBackpack(player);
+                BackpackInventory currInv = map.getBackpackInventory(pID, number);
+                player.openInventory(currInv.getBackpack());
             } else if (subCommand.equals("add")) {
-                this.map.addBackpack(player, number);
+                this.map.addBackpack(pID, number);
             }
 
         } else {
