@@ -32,17 +32,13 @@ public class BackpackTabCompleter implements TabCompleter {
             }
 
             if (argumentStrings.length == 2) {
-                if (argumentStrings[1].equalsIgnoreCase("add")) {
-                    completionStrings.add("1");
-                } else {
-                    if (sender instanceof Player player) {
-                        UUID pID = player.getUniqueId();
-                        int numberBackpacks = this.map.getList(pID).size();
-                        for (int i = 1 ; i <= numberBackpacks ; i++) {
-                            completionStrings.add(String.valueOf(i));
-                        }
-                        return completionStrings;
+                if (sender instanceof Player player) {
+                    UUID pID = player.getUniqueId();
+                    int numberBackpacks = this.map.getList(pID).size();
+                    for (int i = 1 ; i <= numberBackpacks ; i++) {
+                        completionStrings.add(String.valueOf(i));
                     }
+                    return completionStrings;
                 }
             }
         }
