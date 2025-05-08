@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
+import brussel.sprout.exceptions.InvalidBackpackException;
+import brussel.sprout.exceptions.InvalidFactorException;
+
 /**
  *
  * @author Kieran
@@ -24,8 +27,12 @@ public class BackpackMap {
         return this.map;
     }
 
-    public BackpackInventory getBackpackInventory(UUID pID, int inventoryNumber) {
-        return map.get(pID).get(inventoryNumber);
+    public BackpackInventory getBackpackInventory(UUID pID, int inventoryNumber) throws InvalidBackpackException {
+        try {
+            return map.get(pID).get(inventoryNumber);
+        } catch (IndexOutOfBoundsException e) {
+            throw new InvalidBackpackException(this.getList(pID).size());
+        }
     }
 
     public ArrayList<BackpackInventory> getList(UUID pID) {
@@ -51,13 +58,17 @@ public class BackpackMap {
         map.get(pID).remove(inventoryNumber);
     }
 
-    public void replaceBackpack(UUID pID, int inventoryNumber, BackpackInventory newBackpackInventory) throws IndexOutOfBoundsException {
-        ArrayList<BackpackInventory> ls = this.getList(pID);
-        ls.set(inventoryNumber, newBackpackInventory);
+    public void replaceBackpack(UUID pID, int inventoryNumber, BackpackInventory newBackpackInventory) throws InvalidBackpackException {
+        try {
+            ArrayList<BackpackInventory> ls = this.getList(pID);
+            ls.set(inventoryNumber, newBackpackInventory);
+        } catch (IndexOutOfBoundsException e) {
+            throw new InvalidBackpackException(this.getList(pID).size());
+        }
     }
 
-    public void expandBackpack(UUID pID, int inventoryNumber, int factor) throws IndexOutOfBoundsException {
-        BackpackInventory newBackpackInventory = this.getBackpackInventory(pID, inventoryNumber).expandBackpackInventory(factor);
+    public void transformBackpack(UUID pID, int inventoryNumber, int factor) throws InvalidBackpackException, InvalidFactorException {
+        BackpackInventory newBackpackInventory = this.getBackpackInventory(pID, inventoryNumber).transformBackpackInventory(factor);
         replaceBackpack(pID, inventoryNumber, newBackpackInventory);
     }
 }

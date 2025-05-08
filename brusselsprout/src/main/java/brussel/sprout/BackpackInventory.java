@@ -7,6 +7,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import brussel.sprout.exceptions.InvalidFactorException;
+
 /**
  * 
  * @author Kieran
@@ -35,13 +37,18 @@ public class BackpackInventory {
         this.backpack.setContents(items);
     }
 
-    public BackpackInventory expandBackpackInventory(int factor) throws IndexOutOfBoundsException {
+    public BackpackInventory transformBackpackInventory(int factor) throws InvalidFactorException {
         int currSize = this.getSize();
-        int newSize = SLOTS.get(SLOTS.indexOf(currSize) + factor);
+        int newIndex = SLOTS.indexOf(currSize) + factor;
+        try {
+            int newSize = SLOTS.get(newIndex);
 
-        BackpackInventory newBackpack = new BackpackInventory(newSize);
-        newBackpack.setContents(this.getContents());
-        
-        return newBackpack;
+            BackpackInventory newBackpack = new BackpackInventory(newSize);
+            newBackpack.setContents(Arrays.copyOfRange(this.getContents(), 0, newSize));
+            
+            return newBackpack;
+        } catch (IndexOutOfBoundsException e) {
+            throw new InvalidFactorException(InvalidFactorException.getErrorMessage(newIndex));
+        }
     }
 }

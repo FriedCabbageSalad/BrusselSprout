@@ -4,4 +4,4 @@ version: 1.0
 commands:
   backpack:
     description: Opens a portable inventory
-    usage: /backpack n
+    usage: /backpack command number

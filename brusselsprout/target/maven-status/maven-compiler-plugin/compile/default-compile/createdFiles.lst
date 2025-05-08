@@ -1,5 +1,8 @@
 brussel\sprout\BackpackInventory.class
-brussel\sprout\storage\BackpackStorage.class
+brussel\sprout\tabcompleters\BackpackTabCompleter.class
+brussel\sprout\exceptions\InvalidFactorException.class
 brussel\sprout\BrusselSprout.class
-brussel\sprout\commands\CommandBackpack.class
 brussel\sprout\BackpackMap.class
+brussel\sprout\exceptions\InvalidBackpackException.class
+brussel\sprout\storage\BackpackStorage.class
+brussel\sprout\commands\CommandBackpack.class
